@@ -1,0 +1,178 @@
+
+.hero {
+  min-height: calc(100vh - 85px);
+  padding: 60px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+  background: #0c0d12;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 580px;
+  z-index: 2;
+}
+
+.hero-greeting {
+  color: #61dafb;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  color: #fff;
+  font-size: clamp(40px, 6vw, 65px);
+  margin: 15px 0;
+}
+
+.hero-role {
+  color: #61dafb;
+  font-size: clamp(23px, 3vw, 32px);
+  min-height: 45px;
+}
+
+.typing-cursor {
+  animation: blink 0.8s infinite;
+}
+
+.hero-description {
+  color: #a5a6b0;
+  line-height: 1.9;
+  font-size: 16px;
+  margin: 20px 0 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 13px 25px;
+  border-radius: 10px;
+  background: #61dafb;
+  color: #101117;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.25);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  color: #61dafb;
+  border: 1px solid #61dafb;
+}
+
+.hero-visual {
+  flex: 1;
+  width: 100%;
+  max-width: 580px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 400px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 85%;
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.55) 0%,
+    rgba(56, 189, 248, 0.35) 35%,
+    rgba(99, 102, 241, 0.15) 60%,
+    transparent 75%
+  );
+  filter: blur(90px);
+  opacity: 0.8;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.hero-react-logo {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(200px, 28vw, 350px);
+  color: #61dafb;
+  filter: drop-shadow(0 0 25px rgba(97, 218, 251, 0.4));
+  animation: floating 4s ease-in-out infinite;
+}
+
+.hero-react-logo svg {
+  display: block;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 6%;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 300px;
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .hero-react-logo {
+    font-size: 210px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+}
